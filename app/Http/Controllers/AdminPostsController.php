@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 class AdminPostsController extends Controller
 {
@@ -33,6 +33,11 @@ class AdminPostsController extends Controller
     {
         $post=Post::find($id);
         $post->update($request->all());
+        return redirect()->route('admin.posts.index');
+    }
+    public function destroy($id)
+    {
+        Post::destroy($id);
         return redirect()->route('admin.posts.index');
     }
 }

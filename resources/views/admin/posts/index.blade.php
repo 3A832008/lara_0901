@@ -45,7 +45,7 @@
                         <td style="text-align: center">{{ $post->is_feature?'V':'X' }}</td>
                         <td>
                             <a class="btn btn-sm btn-primary" href="{{ route('admin.posts.edit', $post->id) }}">編輯</a>
-                            <form action="/admin/posts/{$post->id)}" method="POST" style="display: inline">
+                            <form action="/admin/posts/{{$post->id}}" method="POST" style="display: inline">
                                 @method('DELETE')
                                 @csrf
                                 <button class="btn btn-sm btn-danger" type="submit">刪除</button>
